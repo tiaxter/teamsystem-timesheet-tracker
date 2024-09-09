@@ -17,7 +17,7 @@ export default async function addActivity(jiraService: JiraService) {
     })!;
 
     let taskCode, epic, task;
-    if (activityType.projectDescription !== 'N.A') {
+    if (activityType.projectDescription !== 'N.A.') {
         // Ask for the task code
         taskCode = PromptService.prompt('Enter the task code:', {required: true})!;
 
