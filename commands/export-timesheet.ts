@@ -42,7 +42,7 @@ export default async function exportTimesheet(config: Config) {
             config.user.nickname.toLowerCase(), // Nickname
             record?.epic?.code ?? '', // Epic Code
             record?.epic?.description ?? '', // Epic Description
-            (!record.epic?.code || !record.task?.code) ? '' : `${record.epic.code}|${record.task.code}`, // Issue code
+            (!record?.epic?.code || !record?.task?.code) ? '' : `${record.epic.code}|${record.task.code}`, // Issue code
             record?.task?.description ?? '', // Issue Description
         ];
     });
