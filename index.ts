@@ -1,12 +1,12 @@
 #!/usr/bin/env bun
 
-import { addActivity, logActivities, startActivity, endActivity, exportTimesheet, help } from "./commands";
-import { ConfigService, PromptService, JiraService } from "./services";
+import {addActivity, endActivity, exportTimesheet, help, logActivities, startActivity} from "./commands";
+import {ConfigService, JiraService, PromptService} from "./services";
 import type {Config} from "./types/config.ts";
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import {TEMPLATE_XLSX_FILE, TIMESHEET_DIRECTORY, TYPOLOGIES_FILE} from "./constants";
-import { mkdir } from "node:fs/promises";
+import {mkdir} from "node:fs/promises";
 
 dayjs.extend(customParseFormat);
 
@@ -41,7 +41,10 @@ if (!doesConfigExist) {
     await Bun.write(TYPOLOGIES_FILE, await Bun.file('typologies.toml').text());
 
     // copy template.xslx to config directory
-    await Bun.write(TEMPLATE_XLSX_FILE, await Bun.file('timesheet-template.xlsx').text());
+    await Bun.write(
+        TEMPLATE_XLSX_FILE,
+        Buffer.from(await Bun.file('timesheet-template.xlsx').arrayBuffer()),
+    );
 
     // create folder for xlsx timesheets
     await mkdir(TIMESHEET_DIRECTORY, { recursive: true });
@@ -64,7 +67,7 @@ switch (command) {
         await endActivity()
         break;
     case 'log':
-        await logActivities(); // TODO: implement
+        await logActivities();
         break;
     case 'export':
         await exportTimesheet(config);
