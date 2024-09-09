@@ -1,7 +1,8 @@
 # timesheet-tracker
 
 ## Requirements
-- Jira account with API token
+- Bun.js (https://bun.js.org)
+- Jira account with API token (https://id.atlassian.com/manage/api-tokens)
 - Jira domain (eg. `your-domain.atlassian.net`)
 
 ## How to use
