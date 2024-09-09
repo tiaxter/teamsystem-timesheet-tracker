@@ -1,0 +1,61 @@
+[[typologies]] # Nuove feature e altre evolutive DIC
+interventionCode = "INT001_STD"
+interventionDescription = "Implementazioni"
+taskCode = "ATT002_SVI"
+taskDescription = "Sviluppo"
+productCode = "PROD_308"
+projectCode = "000968"
+projectDescription = "Nuove feature e altre evolutive DIC"
+customerCode = "CL_001"
+
+[[typologies]] # DIC Spagna
+interventionCode = "INT001_STD"
+interventionDescription = "Implementazioni"
+taskCode = "ATT002_SVI"
+taskDescription = "Sviluppo"
+productCode = "PROD_308"
+projectCode = "000969"
+projectDescription = "DIC Spagna"
+customerCode = "CL_001"
+
+[[typologies]] # MEV-DIC (Implementazioni)
+interventionCode = "INT001_STD"
+interventionDescription = "Implementazioni"
+taskCode = "ATT002_SVI"
+taskDescription = "Sviluppo"
+productCode = "PROD_308"
+projectCode = "000975"
+projectDescription = "MEV - DIC"
+customerCode = "CL_001"
+
+
+[[typologies]] # MEV-DIC (Bug fixing)
+interventionCode = "INT004_BUG"
+interventionDescription = "Bug Fixing"
+taskCode = "ATT002_SVI"
+taskDescription = "Sviluppo"
+productCode = "PROD_308"
+projectCode = "000975"
+projectDescription = "MEV - DIC"
+customerCode = "CL_001"
+
+[[typologies]] # Maintenance
+interventionCode = "INT001_STD"
+interventionDescription = "Implementazioni"
+taskCode = "ATT002_SVI"
+taskDescription = "Sviluppo"
+productCode = "PROD_308"
+projectCode = "0001006"
+projectDescription = "Maintenance"
+customerCode = "CL_001"
+
+[[typologies]] # Assenze
+interventionCode = "INT008_ASSEN"
+interventionDescription = "Assenze"
+taskCode = "ATT016_ASSEN"
+taskDescription = "Assenze"
+productCode = "PROD_999"
+productDescription = "N.A."
+projectCode = "000999"
+projectDescription = "N.A."
+customerCode = "CL_OO6"

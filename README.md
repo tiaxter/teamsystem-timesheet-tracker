@@ -1,15 +1,17 @@
 # timesheet-tracker
 
-To install dependencies:
+## Requirements
+- Jira account with API token
+- Jira domain (eg. `your-domain.atlassian.net`)
 
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.26. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## How to use
+1. Clone this repository
+2. Install dependencies
+    ```bash
+    bun install
+    ```
+3. Run the program
+    ```bash
+    bun run index.ts
+    ```
+4. Let's have fun!

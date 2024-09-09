@@ -1,8 +1,11 @@
+import {CONFIG_DIRECTORY} from "../constants";
+import type {Config} from "../types/config.ts";
+
 export default class ConfigService {
     private readonly path: string;
 
     public constructor() {
-        this.path = `${Bun.env.HOME}/.timesheet-tracker/config.toml`
+        this.path = `${CONFIG_DIRECTORY}/config.toml`;
     }
 
     public doesConfigExist(): Promise<boolean> {
@@ -13,7 +16,7 @@ export default class ConfigService {
         const toml = Object.entries(data)
             .map(([key, value]) => {
                 const childValues = Object.entries(value)
-                    .map(([key, value]) => `${key} = ${value}`)
+                    .map(([key, value]) => `${key} = "${value}"`)
                     .join('\n');
 
                 return `[${key}]\n${childValues}`;
@@ -23,7 +26,7 @@ export default class ConfigService {
         return Bun.write(this.path, toml);
     }
 
-    public get(): Promise<Record<string, any>> {
+    public get(): Promise<Config> {
         return import(this.path).then(module => module.default);
     }
 }
